@@ -14,20 +14,12 @@ jobs:
     steps:
       #Assign a descriptive enough name for what step your completeing
       - name: Get the code
-        run: echo "Getting the code"
         uses: actions/checkout@v3
       - name: Install NodeJS
-        run: echo "Installing NodeJS"
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install dependencies
-        run: |
-          echo "Installing Dependancies"
-          npm ci # Can also use npm install
+        run: npm ci # Can also use npm install
       - name: Run tests
-        run: |
-          echo "Running Tests"
-          npm test
-      - name: Completion Message
-        run: echo "Test Complete. Goodbye."
+        run: npm test
