@@ -3,7 +3,7 @@ name:
   Deploy Project
 # Specify what triggers the worflow to run, Google "Github Action Events" for more info.  
 on: 
-  push
+  [push, workflow_dispatch]
 #Specify the jobs
 jobs:
   #Name the jobs - name is completely up to you
