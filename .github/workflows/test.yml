@@ -1,0 +1,25 @@
+# Name the workflow - name is completely up to you
+name: 
+  Test Project
+# Specify what triggers the worflow to run, Google "Github Action Events" for more info.  
+on: 
+  push
+#Specify the jobs
+jobs:
+  #Name the jobs - name is completely up to you
+  test:
+    #Specifiy your runner, Google "Github Actions Runners" for more info
+    runs-on: ubuntu-latest
+    #Specificy Steps - steps can be a Command Line CMD or and "Action"
+    steps:
+      #Assign a descriptive enough name for what step your completeing
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci # Can also use npm install
+      - name: Run tests
+        run: npm test
