@@ -25,6 +25,8 @@ jobs:
         run: npm test
   
   deploy:
+    # needs key is necessary to have jobs run sequentially rather than parallel. Can use [] to specify multiple jobs ie. [test1, test2, etc...]
+    needs: test
     runs-on: ubuntu-latest
     steps: 
       - name: Get the code
