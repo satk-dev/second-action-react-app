@@ -1,7 +1,7 @@
 # Name the workflow - name is completely up to you
 name: 
   Deploy Project
-# Specify what triggers the worflow to run, Google "Github Action Events" for more info.  
+# Specify what triggers the worflow to run. Can have multiple workflow triggers by wrapping them in [] . Google "Github Action Events" for more info.  
 on: 
   [push, workflow_dispatch]
 #Specify the jobs
